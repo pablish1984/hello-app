@@ -16,8 +16,7 @@ phases:
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
-      - echo Build completed on 'date'
-      - echo Pushing the Docker image
+      - echo Build completed on 'date'      
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - printf '[{"name":"hello-app-container", "imageUri":"public.ecr.aws/k8t7n6p8/my-python-app:hello-app-latest"}]' > imagedefinitions.json      
 artifacts:
