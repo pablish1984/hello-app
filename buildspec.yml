@@ -17,6 +17,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on 'date'      
+      - echo new pileline request
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - printf '[{"name":"hello-app-container", "imageUri":"public.ecr.aws/k8t7n6p8/my-python-app:hello-app-latest"}]' > imagedefinitions.json      
 artifacts:
